@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     cars = [];
 
     function loadCars(){
-        fetch('http://localhost:7071/api/cars')
+        fetch('/api/cars')
         .then(response => response.json())
         .then(data => {
             cars = data;
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 function addCar(newCar) {
-    fetch('http://localhost:7071/api/cars', {
+    fetch('/api/cars', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -66,7 +66,7 @@ carForm.addEventListener('submit', event => {
 // Function to remove a car
 function removeCar(index) {
     console.log('Index:', index);
-    fetch(`http://localhost:7071/api/cars?index=${index}`, {
+    fetch(`/api/cars?index=${index}`, {
         method: 'DELETE'
     })
         .then(response => response.json())
