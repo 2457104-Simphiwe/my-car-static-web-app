@@ -1,9 +1,6 @@
 name: Jest Tests with Coverage
 
-on:  
-    pull_request:
-        types: [closed]
-
+on:  [push]
 
 jobs:
   test:
